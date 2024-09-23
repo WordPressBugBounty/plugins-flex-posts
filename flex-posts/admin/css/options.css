@@ -1,0 +1,11 @@
+.form-table {
+	max-width: 666px;
+}
+
+.form-table th {
+	display: none;
+}
+
+.form-table input[type="checkbox"] + span {
+	font-weight: 500;
+}

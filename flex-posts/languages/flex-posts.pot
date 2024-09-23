@@ -1,0 +1,302 @@
+# Copyright (C) 2024 Tajam
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Flex Posts - Widget and Gutenberg Block 1.11.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/flex-posts\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-07-02T21:54:29+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: flex-posts\n"
+
+#. Plugin Name of the plugin
+msgid "Flex Posts - Widget and Gutenberg Block"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://tajam.id/flex-posts/"
+msgstr ""
+
+#. Description of the plugin
+msgid "A widget to display posts with thumbnails in various layouts for any widget area."
+msgstr ""
+
+#. Author of the plugin
+msgid "Tajam"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://tajam.id/"
+msgstr ""
+
+#: blocks/list/block.php:27
+msgid "All Categories"
+msgstr ""
+
+#: flex-posts.php:111
+#: includes/class-options.php:99
+msgid "Settings"
+msgstr ""
+
+#: includes/class-flex-posts-list.php:23
+#: includes/class-options.php:78
+#: includes/class-options.php:79
+#: blocks/list/block.js:22
+msgid "Flex Posts"
+msgstr ""
+
+#: includes/class-flex-posts-list.php:25
+msgid "Displays posts list."
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:245
+#: includes/class-flex-posts-widget.php:275
+#: blocks/list/block.js:156
+msgid "Layout"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:260
+#: blocks/list/block.js:170
+msgid "General"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:265
+#: blocks/list/block.js:177
+msgid "Title"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:270
+#: blocks/list/block.js:188
+msgid "Title URL"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:289
+#: blocks/list/block.js:214
+msgid "Query"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:294
+msgid "Post Type"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:302
+#: blocks/list/block.js:231
+msgid "Category"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:308
+#: blocks/list/block.js:243
+msgid "Tag(s)"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:314
+#: blocks/list/block.js:253
+msgid "Order by"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:321
+#: blocks/list/block.js:264
+msgid "Number of posts to show"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:328
+#: blocks/list/block.js:275
+msgid "Number of posts to skip"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:335
+#: blocks/list/block.js:286
+msgid "Exclude current post"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:347
+#: blocks/list/block.js:301
+msgid "Display"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:352
+#: blocks/list/block.js:307
+msgid "Show image on"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:354
+#: blocks/list/block.js:310
+msgid "All posts"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:355
+#: blocks/list/block.js:311
+msgid "First post only"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:356
+#: blocks/list/block.js:312
+msgid "None"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:364
+#: blocks/list/block.js:322
+msgid "Thumbnail image size"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:372
+#: blocks/list/block.js:333
+msgid "Medium image size"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:380
+#: blocks/list/block.js:344
+msgid "Show post title"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:386
+#: blocks/list/block.js:354
+msgid "Show categories"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:392
+#: blocks/list/block.js:364
+msgid "Show author"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:398
+#: blocks/list/block.js:374
+msgid "Show author image"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:404
+#: blocks/list/block.js:384
+msgid "Show date"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:410
+#: blocks/list/block.js:394
+msgid "Show comments number"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:416
+#: blocks/list/block.js:404
+msgid "Show excerpt"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:423
+#: blocks/list/block.js:414
+msgid "Excerpt length"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:430
+#: blocks/list/block.js:425
+msgid "Show read more link"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:437
+#: blocks/list/block.js:436
+msgid "Read more text"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:444
+#: blocks/list/block.js:446
+msgid "Show pagination"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:456
+msgid "Advanced"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:461
+#: blocks/list/block.js:464
+msgid "Block Title HTML element"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:468
+#: blocks/list/block.js:483
+msgid "Post Title HTML element"
+msgstr ""
+
+#: includes/class-flex-posts-widget.php:475
+msgid "Additional CSS class(es)"
+msgstr ""
+
+#: includes/class-options.php:103
+#: includes/class-options.php:136
+msgid "Disable CSS"
+msgstr ""
+
+#: includes/class-options.php:111
+msgid "Disable Image Size"
+msgstr ""
+
+#: includes/class-options.php:137
+msgid "This plugin uses a single CSS file (flex-posts.css). If this option is on, the CSS file will not be loaded."
+msgstr ""
+
+#: includes/class-options.php:160
+msgid "Disable Additional Image Size"
+msgstr ""
+
+#: includes/class-options.php:161
+msgid "This plugin adds a new custom image size (400×250 cropped). If this option is on, this image size will not be generated."
+msgstr ""
+
+#: includes/functions.php:201
+msgid "Previous"
+msgstr ""
+
+#: includes/functions.php:202
+msgid "Next"
+msgstr ""
+
+#: includes/functions.php:210
+#: includes/functions.php:365
+msgid "Page"
+msgstr ""
+
+#: includes/functions.php:258
+msgid "Read more"
+msgstr ""
+
+#: includes/functions.php:364
+msgid "Post"
+msgstr ""
+
+#: includes/functions.php:379
+msgid "Any"
+msgstr ""
+
+#: includes/functions.php:426
+msgid "Newest"
+msgstr ""
+
+#: includes/functions.php:427
+msgid "Oldest"
+msgstr ""
+
+#: includes/functions.php:428
+msgid "Most commented"
+msgstr ""
+
+#: includes/functions.php:429
+msgid "Alphabetical"
+msgstr ""
+
+#: includes/functions.php:430
+msgid "Random"
+msgstr ""
+
+#: includes/functions.php:431
+msgid "Modified date"
+msgstr ""
+
+#: includes/functions.php:432
+msgid "Page order"
+msgstr ""
+
+#: includes/functions.php:457
+#: includes/functions.php:514
+msgid "Default"
+msgstr ""
