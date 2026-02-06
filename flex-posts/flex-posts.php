@@ -3,7 +3,7 @@
  * Plugin Name: Flex Posts - Widget and Gutenberg Block
  * Plugin URI:  https://tajam.id/flex-posts/
  * Description: A widget to display posts with thumbnails in various layouts for any widget area.
- * Version:     1.11.0
+ * Version:     1.12.0
  * Author:      Tajam
  * Author URI:  https://tajam.id/
  * License:     GPL-2.0+
@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Current plugin version.
  */
-define( 'FLEX_POSTS_VERSION', '1.11.0' );
+define( 'FLEX_POSTS_VERSION', '1.12.0' );
 
 /**
  * Plugin directory and url

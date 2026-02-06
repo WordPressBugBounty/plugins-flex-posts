@@ -163,6 +163,10 @@
 	opacity: 1;
 }
 
+.fp-author span .author-image:hover {
+	text-decoration: none;
+}
+
 .author-image + .url {
 	margin-left: 0.2em;
 }
@@ -228,6 +232,7 @@
 	text-decoration: none;
 }
 
-.block-editor__container [class*="widget_flex-posts"] a {
+.block-editor__container [class*="widget_flex-posts"] a,
+.wp-block-widget-area [class*="widget_flex-posts"] a {
 	pointer-events: none;
 }

@@ -3,7 +3,7 @@ Contributors: tajam
 Donate link: https://tajam.id/
 Tags: posts list, posts widget, responsive, magazine, news
 Requires at least: 5.2
-Tested up to: 6.6
+Tested up to: 6.9
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -24,7 +24,7 @@ The widget is responsive so you can place it in any widget area. The widget cont
 * **Post type**: Select the post type. Options include: Post, Page, custom post types if available, and any.
 * **Category**: Select a category for the posts, or choose All Categories to disable this filter.
 * **Tag(s)**: Set a post tag (using the tag slug). You can also use comma separated value for multiple tags. Prepending a tag with a hyphen will exclude posts matching that tag. Eg, `featured, -video` will show posts tagged with `featured` but not `video`.
-* **Order by**: Set the order in which the posts will be displayed. Options include: Newest, Oldest, Most Commented, Alphabetical, Random, Modified Date.
+* **Order by**: Set the order in which the posts will be displayed. Options include: Newest, Oldest, Most Commented, Alphabetical, Random, Modified Date, Page order.
 * **Number of posts to show**: Set the number of posts displayed.
 * **Number of posts to skip**: Set the number of posts to displace or pass over.
 * **Exclude current post**: Choose to show or hide current post.
@@ -81,6 +81,12 @@ This plugin has been tested and works with at least PHP 5.3 installed in your en
 11. Block editor
 
 == Changelog ==
+
+= 1.12.0 =
+* Updated compatibility to WordPress 6.9
+* Fixed author image hover style
+* Fixed block settings label translations
+* Fixed block style in Appearance » Widgets page
 
 = 1.11.0 =
 * Fixed a php error in widget title

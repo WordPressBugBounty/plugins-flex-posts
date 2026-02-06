@@ -30,112 +30,7 @@
 			html: false,
 		},
 
-		attributes: {
-			title: {
-				type: 'string',
-				default: ''
-			},
-			title_url: {
-				type: 'string',
-				default: ''
-			},
-			layout: {
-				type: 'number',
-				default: 1
-			},
-			post_type: {
-				type: 'string',
-				default: "post"
-			},
-			cat: {
-				type: 'string',
-				default: ''
-			},
-			tag: {
-				type: 'string',
-				default: ''
-			},
-			order_by: {
-				type: 'string',
-				default: 'newest'
-			},
-			number: {
-				type: 'number',
-				default: 4
-			},
-			skip: {
-				type: 'number',
-				default: 0
-			},
-			exclude_current: {
-				type: 'boolean',
-				default: false
-			},
-			show_image: {
-				type: 'string',
-				default: 'all'
-			},
-			image_size: {
-				type: 'string',
-				default: ''
-			},
-			image_size2: {
-				type: 'string',
-				default: ''
-			},
-			show_title: {
-				type: 'boolean',
-				default: true
-			},
-			show_categories: {
-				type: 'boolean',
-				default: false
-			},
-			show_author: {
-				type: 'boolean',
-				default: false
-			},
-			show_avatar: {
-				type: 'boolean',
-				default: false
-			},
-			show_date: {
-				type: 'boolean',
-				default: true
-			},
-			show_comments: {
-				type: 'boolean',
-				default: true
-			},
-			show_excerpt: {
-				type: 'boolean',
-				default: false
-			},
-			excerpt_length: {
-				type: 'number',
-				default: 15
-			},
-			show_readmore: {
-				type: 'boolean',
-				default: false
-			},
-			readmore_text: {
-				type: 'string',
-				default: ''
-			},
-			pagination: {
-				type: 'boolean',
-				default: false
-			},
-			block_title_el: {
-				type: 'string',
-				default: ''
-			},
-			post_title_el: {
-				type: 'string',
-				default: ''
-			}
-		},
+		attributes: flex_posts.attributes,
 
 		edit: function( props ) {
 			var attr = props.attributes;
@@ -159,11 +54,12 @@
 			return [
 				el( ServerSideRender, {
 					block: 'flex-posts/list',
-					attributes: props.attributes
+					attributes: props.attributes,
+					key: 'server-render'
 				} ),
 				el(
 					InspectorControls,
-					{ key: 'inspector' },
+					{ key: 'inspector-general' },
 					el(
 						components.PanelBody,
 						{
@@ -178,7 +74,9 @@
 								value: attr.title,
 								onChange: function( val ) {
 									props.setAttributes( { title: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true,
+								__next40pxDefaultSize: true
 							}
 						),
 						el(
@@ -189,25 +87,29 @@
 								value: attr.title_url,
 								onChange: function( val ) {
 									props.setAttributes( { title_url: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true,
+								__next40pxDefaultSize: true
 							}
 						),
 						el(
 							components.SelectControl,
 							{
-								label: 'Layout',
+								label: __( 'Layout', 'flex-posts' ),
 								options: layouts,
 								value: attr.layout,
 								onChange: function( val ) {
 									props.setAttributes( { layout: parseInt( val ) } )
-								}
+								},
+								__nextHasNoMarginBottom: true,
+								__next40pxDefaultSize: true
 							}
 						),
 					)
 				),
 				el(
 					InspectorControls,
-					{},
+					{ key: 'inspector-query' },
 					el(
 						components.PanelBody,
 						{
@@ -217,12 +119,14 @@
 						el(
 							components.SelectControl,
 							{
-								label: 'Post Type',
+								label: __( 'Post Type', 'flex-posts' ),
 								value: attr.post_type,
 								options: flex_posts.post_types,
 								onChange: function( val ) {
 									props.setAttributes( { post_type: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true,
+								__next40pxDefaultSize: true
 							}
 						),
 						has_category_option && el(
@@ -233,7 +137,9 @@
 								options: flex_posts.categories,
 								onChange: function( val ) {
 									props.setAttributes( { cat: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true,
+								__next40pxDefaultSize: true
 							}
 						),
 						has_post_tag_option && el(
@@ -244,7 +150,9 @@
 								value: attr.tag,
 								onChange: function( val ) {
 									props.setAttributes( { tag: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true,
+								__next40pxDefaultSize: true
 							}
 						),
 						el(
@@ -255,7 +163,9 @@
 								options: flex_posts.order_by,
 								onChange: function( val ) {
 									props.setAttributes( { order_by: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true,
+								__next40pxDefaultSize: true
 							}
 						),
 						el(
@@ -266,7 +176,9 @@
 								min: 1,
 								onChange: function( val ) {
 									props.setAttributes( { number: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true,
+								__next40pxDefaultSize: true
 							}
 						),
 						el(
@@ -277,7 +189,9 @@
 								min: 0,
 								onChange: function( val ) {
 									props.setAttributes( { skip: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true,
+								__next40pxDefaultSize: true
 							}
 						),
 						el(
@@ -287,14 +201,15 @@
 								checked: attr.exclude_current,
 								onChange: function( val ) {
 									props.setAttributes( { exclude_current: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true
 							}
 						),
 					)
 				),
 				el(
 					InspectorControls,
-					{},
+					{ key: 'inspector-display' },
 					el(
 						components.PanelBody,
 						{
@@ -313,7 +228,9 @@
 								],
 								onChange: function( val ) {
 									props.setAttributes( { show_image: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true,
+								__next40pxDefaultSize: true
 							}
 						),
 						attr.show_image !== 'none' && ( attr.layout === 1 || attr.layout === 3 ) && el(
@@ -324,7 +241,9 @@
 								options: flex_posts.image_sizes,
 								onChange: function( val ) {
 									props.setAttributes( { image_size: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true,
+								__next40pxDefaultSize: true
 							}
 						),
 						attr.show_image !== 'none' && attr.layout !== 1 && el(
@@ -335,7 +254,9 @@
 								options: flex_posts.image_sizes,
 								onChange: function( val ) {
 									props.setAttributes( { image_size2: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true,
+								__next40pxDefaultSize: true
 							}
 						),
 						el(
@@ -345,7 +266,8 @@
 								checked: attr.show_title,
 								onChange: function( val ) {
 									props.setAttributes( { show_title: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true
 							}
 						),
 						el(
@@ -355,7 +277,8 @@
 								checked: attr.show_categories,
 								onChange: function( val ) {
 									props.setAttributes( { show_categories: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true
 							}
 						),
 						el(
@@ -365,7 +288,8 @@
 								checked: attr.show_author,
 								onChange: function( val ) {
 									props.setAttributes( { show_author: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true
 							}
 						),
 						el(
@@ -375,7 +299,8 @@
 								checked: attr.show_avatar,
 								onChange: function( val ) {
 									props.setAttributes( { show_avatar: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true
 							}
 						),
 						el(
@@ -385,7 +310,8 @@
 								checked: attr.show_date,
 								onChange: function( val ) {
 									props.setAttributes( { show_date: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true
 							}
 						),
 						el(
@@ -395,7 +321,8 @@
 								checked: attr.show_comments,
 								onChange: function( val ) {
 									props.setAttributes( { show_comments: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true
 							}
 						),
 						el(
@@ -405,7 +332,8 @@
 								checked: attr.show_excerpt,
 								onChange: function( val ) {
 									props.setAttributes( { show_excerpt: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true
 							}
 						),
 						attr.show_excerpt && el(
@@ -416,7 +344,9 @@
 								min: 1,
 								onChange: function( val ) {
 									props.setAttributes( { excerpt_length: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true,
+								__next40pxDefaultSize: true
 							}
 						),
 						el(
@@ -426,7 +356,8 @@
 								checked: attr.show_readmore,
 								onChange: function( val ) {
 									props.setAttributes( { show_readmore: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true
 							}
 						),
 						attr.show_readmore && el(
@@ -437,7 +368,9 @@
 								value: attr.readmore_text,
 								onChange: function( val ) {
 									props.setAttributes( { readmore_text: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true,
+								__next40pxDefaultSize: true
 							}
 						),
 						el(
@@ -447,14 +380,15 @@
 								checked: attr.pagination,
 								onChange: function( val ) {
 									props.setAttributes( { pagination: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true
 							}
 						)
 					)
 				),
 				el(
 					InspectorAdvancedControls,
-					{},
+					{ key: 'inspector-advanced1' },
 					el(
 						'div',
 						{},
@@ -466,14 +400,16 @@
 								options: flex_posts.title_el,
 								onChange: function( val ) {
 									props.setAttributes( { block_title_el: val } )
-								}
+								},
+								__nextHasNoMarginBottom: true,
+								__next40pxDefaultSize: true
 							}
 						)
 					)
 				),
 				el(
 					InspectorAdvancedControls,
-					{},
+					{ key: 'inspector-advanced2' },
 					el(
 						'div',
 						{},
@@ -485,8 +421,10 @@
 								options: flex_posts.title_el,
 								onChange: function( val ) {
 									props.setAttributes( { post_title_el: val } )
-								}
-							}
+								},
+								__nextHasNoMarginBottom: true,
+								__next40pxDefaultSize: true
+							},
 						)
 					)
 				)

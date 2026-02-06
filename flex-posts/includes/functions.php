@@ -530,3 +530,125 @@ function flex_posts_get_title_elements_options( $block = true ) {
 	}
 	return $options2;
 }
+
+/**
+ * Get block attributes
+ *
+ * @return array
+ */
+function flex_posts_get_attributes() {
+	return array(
+		'title'           => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'title_url'       => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'layout'          => array(
+			'type'    => 'number',
+			'default' => 1,
+		),
+		'post_type'       => array(
+			'type'    => 'string',
+			'default' => 'post',
+		),
+		'cat'             => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'tag'             => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'order_by'        => array(
+			'type'    => 'string',
+			'default' => 'newest',
+		),
+		'number'          => array(
+			'type'    => 'number',
+			'default' => 4,
+		),
+		'skip'            => array(
+			'type'    => 'number',
+			'default' => 0,
+		),
+		'exclude_current' => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'show_image'      => array(
+			'type'    => 'string',
+			'default' => 'all',
+		),
+		'image_size'      => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'image_size2'     => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'show_title'      => array(
+			'type'    => 'boolean',
+			'default' => true,
+		),
+		'show_categories' => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'show_author'     => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'show_avatar'     => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'show_date'       => array(
+			'type'    => 'boolean',
+			'default' => true,
+		),
+		'show_comments'   => array(
+			'type'    => 'boolean',
+			'default' => true,
+		),
+		'show_excerpt'    => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'excerpt_length'  => array(
+			'type'    => 'number',
+			'default' => 15,
+		),
+		'show_readmore'   => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'readmore_text'   => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'pagination'      => array(
+			'type'    => 'boolean',
+			'default' => false,
+		),
+		'align'           => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'block_title_el'  => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'post_title_el'   => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+		'className'       => array(
+			'type'    => 'string',
+			'default' => '',
+		),
+	);
+}
