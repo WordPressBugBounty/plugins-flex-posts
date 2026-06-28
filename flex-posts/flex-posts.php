@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Flex Posts - Widget and Gutenberg Block
+ * Plugin Name: Flex Posts - Responsive Posts Block
  * Plugin URI:  https://tajam.id/flex-posts/
- * Description: A widget to display posts with thumbnails in various layouts for any widget area.
- * Version:     1.12.0
+ * Description: Show your posts with thumbnails in flexible, responsive layouts. Works as a sidebar widget or a block in the editor.
+ * Version:     2.0.0
  * Author:      Tajam
  * Author URI:  https://tajam.id/
  * License:     GPL-2.0+
@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Current plugin version.
  */
-define( 'FLEX_POSTS_VERSION', '1.12.0' );
+define( 'FLEX_POSTS_VERSION', '2.0.0' );
 
 /**
  * Plugin directory and url
@@ -45,8 +45,11 @@ define( 'FLEX_POSTS_URL', plugin_dir_url( __FILE__ ) );
 /**
  * Include functions & widget classes
  */
-require FLEX_POSTS_DIR . 'includes/functions.php';
+require FLEX_POSTS_DIR . 'includes/render.php';
+require FLEX_POSTS_DIR . 'includes/pagination.php';
+require FLEX_POSTS_DIR . 'includes/data.php';
 require FLEX_POSTS_DIR . 'includes/form-helpers.php';
+require FLEX_POSTS_DIR . 'includes/category.php';
 require FLEX_POSTS_DIR . 'includes/class-flex-posts-widget.php';
 require FLEX_POSTS_DIR . 'includes/class-flex-posts-list.php';
 if ( is_admin() ) {
@@ -79,19 +82,7 @@ function flex_posts_register_widgets() {
 add_action( 'widgets_init', 'flex_posts_register_widgets' );
 
 /**
- * Load the text domain for translation.
- */
-function flex_posts_load_textdomain() {
-	load_plugin_textdomain(
-		'flex-posts',
-		false,
-		dirname( plugin_basename( __FILE__ ) ) . '/languages'
-	);
-}
-add_action( 'plugins_loaded', 'flex_posts_load_textdomain' );
-
-/**
- * Register a new image size
+ * Initialize plugin
  */
 function flex_posts_init() {
 	$option = get_option( 'flex_posts' );

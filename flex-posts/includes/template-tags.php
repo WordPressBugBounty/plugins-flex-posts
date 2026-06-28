@@ -40,6 +40,15 @@ if ( ! function_exists( 'flex_posts_meta' ) ) {
 	 * @param array $instance Widget settings.
 	 */
 	function flex_posts_meta( $instance ) {
+		/**
+		 * Action: flex_posts_meta_start
+		 *
+		 * Fired at the start of meta output for a post inside the widget/block.
+		 * Example:
+		 * add_action( 'flex_posts_meta_start', function() { echo '<span>Start</span>'; } );
+		 *
+		 * @param none
+		 */
 		do_action( 'flex_posts_meta_start' );
 
 		if ( ! empty( $instance['show_author'] ) || ! empty( $instance['show_avatar'] ) ) {
@@ -52,6 +61,14 @@ if ( ! function_exists( 'flex_posts_meta' ) ) {
 			flex_posts_comments_meta();
 		}
 
+		/**
+		 * Action: flex_posts_meta_end
+		 *
+		 * Fired at the end of meta output for a post inside the widget/block.
+		 * Useful for adding extra meta content.
+		 *
+		 * @param none
+		 */
 		do_action( 'flex_posts_meta_end' );
 	}
 }
@@ -63,19 +80,36 @@ if ( ! function_exists( 'flex_posts_author_meta' ) ) {
 	 * @param array $instance Widget settings.
 	 */
 	function flex_posts_author_meta( $instance = array() ) {
-		$author_id  = get_the_author_meta( 'ID' );
-		$author_url = get_author_posts_url( $author_id );
+		$author_id    = get_the_author_meta( 'ID' );
+		$author_url   = get_author_posts_url( $author_id );
+		$author_title = sprintf(
+			/* translators: %s: Author's display name. */
+			__( 'Posts by %s', 'flex-posts' ),
+			get_the_author()
+		);
+
+		/**
+		 * Filter: flex_posts_author_image_size
+		 *
+		 * Filter the size (in pixels) used for author avatars in meta output.
+		 *
+		 * @param int $size Default avatar size in pixels.
+		 * @return int Modified avatar size.
+		 *
+		 * Example:
+		 * add_filter( 'flex_posts_author_image_size', function( $size ) { return 32; } );
+		 */
 		$image_size = apply_filters( 'flex_posts_author_image_size', 24 );
 		?>
 		<span class="fp-author">
 			<span class="author vcard">
 				<?php if ( ! empty( $instance['show_avatar'] ) ) : ?>
-					<a class="author-image" href="<?php echo esc_url( $author_url ); ?>">
+					<a class="author-image" href="<?php echo esc_url( $author_url ); ?>" rel="author" title="<?php echo esc_attr( $author_title ); ?>">
 						<?php echo get_avatar( $author_id, $image_size ); ?>
 					</a>
 				<?php endif; ?>
 				<?php if ( ! empty( $instance['show_author'] ) ) : ?>
-					<a class="url fn n" href="<?php echo esc_url( $author_url ); ?>">
+					<a class="url fn n" href="<?php echo esc_url( $author_url ); ?>" rel="author">
 						<span><?php the_author(); ?></span>
 					</a>
 				<?php endif; ?>
@@ -120,11 +154,21 @@ if ( ! function_exists( 'flex_posts_categories_meta' ) ) {
 	 * Display categories meta.
 	 */
 	function flex_posts_categories_meta() {
-		?>
-		<span class="fp-categories">
-			<?php the_category( ', ' ); ?>
-		</span>
-		<?php
+		$categories = get_the_category();
+		if ( ! empty( $categories ) ) {
+			$i = 0;
+			echo '<span class="fp-categories">';
+			foreach ( $categories as $category ) {
+				if ( 0 < $i ) {
+					echo ', ';
+				}
+				$color = get_term_meta( $category->term_id, 'fp_color', true );
+				$style = $color ? "--fp-color: $color" : '';
+				echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" rel="category tag" style="' . esc_attr( $style ) . '">' . esc_html( $category->name ) . '</a>';
+				++$i;
+			}
+			echo '</span>';
+		}
 	}
 }
 
@@ -145,17 +189,42 @@ if ( ! function_exists( 'flex_posts_thumbnail' ) ) {
 				return;
 			}
 		}
+
+		/**
+		 * Filter: flex_posts_default_image
+		 *
+		 * Filter the default image URL used when a post has no featured image.
+		 *
+		 * @param string $url Default image URL.
+		 * @return string Modified image URL.
+		 *
+		 * Example:
+		 * add_filter( 'flex_posts_default_image', function( $url ) { return get_stylesheet_directory_uri() . '/img/default.png'; } );
+		 */
 		$default_image = apply_filters( 'flex_posts_default_image', FLEX_POSTS_URL . 'public/images/default.png' );
 		?>
 		<div class="fp-media">
-			<a class="fp-thumbnail" href="<?php the_permalink(); ?>">
+			<a class="fp-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 				<?php if ( has_post_thumbnail() ) : ?>
 					<?php the_post_thumbnail( $size ); ?>
 				<?php else : ?>
 					<img src="<?php echo esc_url( $default_image ); ?>" class="size-<?php echo esc_attr( $size ); ?>" alt="">
 				<?php endif; ?>
 			</a>
-			<?php do_action( 'flex_posts_media', $instance ); ?>
+			<?php
+			/**
+			 * Action: flex_posts_media
+			 *
+			 * Action hook inside the media block (thumbnail/link) where additional
+			 * markup can be injected. Signature: function( $instance ).
+			 *
+			 * @param array $instance Widget settings.
+			 *
+			 * Example:
+			 * add_action( 'flex_posts_media', function( $instance ) { echo '<span class="badge">New</span>'; } );
+			 */
+			do_action( 'flex_posts_media', $instance );
+			?>
 		</div>
 		<?php
 	}

@@ -33,6 +33,22 @@ class Flex_Posts_List extends Flex_Posts_Widget {
 	 * Get form fields
 	 */
 	public function get_fields() {
+		/**
+		 * Filter: flex_posts_list_fields
+		 *
+		 * Filter the form fields definition for the list widget. Callback
+		 * receives the default parent fields and should return an array of
+		 * field definitions.
+		 *
+		 * @param array $fields Default fields from parent::get_fields().
+		 * @return array Modified fields.
+		 *
+		 * Example:
+		 * add_filter( 'flex_posts_list_fields', function( $fields ) {
+		 *     $fields['custom'] = array( 'type' => 'text', 'label' => 'Custom' );
+		 *     return $fields;
+		 * } );
+		 */
 		return apply_filters( 'flex_posts_list_fields', parent::get_fields() );
 	}
 

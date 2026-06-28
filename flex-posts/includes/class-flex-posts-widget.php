@@ -82,6 +82,8 @@ class Flex_Posts_Widget extends WP_Widget {
 		}
 		?>
 
+		<small><?php esc_html_e( 'For more options, please use Flex Posts block.', 'flex-posts' ); ?></small>
+
 		<?php if ( ! empty( $sections ) ) : ?>
 			<ul class="fp-tabs">
 				<?php foreach ( $sections as $name => $label ) : ?>
@@ -210,7 +212,7 @@ class Flex_Posts_Widget extends WP_Widget {
 								'id'              => $id,
 								'class'           => isset( $field['class'] ) ? $field['class'] : 'widefat',
 								'hierarchical'    => 1,
-								'show_option_all' => esc_html__( 'All Categories', 'flex_posts' ),
+								'show_option_all' => esc_html__( 'All Categories', 'flex-posts' ),
 								'selected'        => $value,
 							)
 						);
@@ -569,6 +571,19 @@ class Flex_Posts_Widget extends WP_Widget {
 		}
 		echo $before_widget;  // @codingStandardsIgnoreLine.
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : '';
+
+		/**
+		 * Filter: widget_title
+		 *
+		 * Filter the widget title before output. This is the core WordPress
+		 * `widget_title` filter — the plugin passes the instance and id_base
+		 * along so callbacks can conditionally modify the title.
+		 *
+		 * @param string $title    The title.
+		 * @param array  $instance Widget settings.
+		 * @param string $id_base  Widget id base.
+		 * @return string Modified title.
+		 */
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 		echo $args['before_title'] . $title . $args['after_title'];  // @codingStandardsIgnoreLine.
 		$this->front( $instance );

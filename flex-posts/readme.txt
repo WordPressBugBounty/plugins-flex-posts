@@ -1,14 +1,14 @@
-=== Flex Posts - Widget and Gutenberg Block ===
+=== Flex Posts - Responsive Posts Block ===
 Contributors: tajam
 Donate link: https://tajam.id/
 Tags: posts list, posts widget, responsive, magazine, news
-Requires at least: 5.2
-Tested up to: 6.9
-Stable tag: trunk
+Requires at least: 6.3
+Tested up to: 7.0
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A widget to display posts with thumbnails in various layouts. Fits nicely in any widget area size.
+Show your posts with thumbnails in flexible, responsive layouts. Works as a sidebar widget or a block in the editor.
 
 == Description ==
 
@@ -18,9 +18,11 @@ The widget is responsive so you can place it in any widget area. The widget cont
 
 = Widget Settings =
 
+* **Layout**: Select a widget layout, from layout 1 to 5.
 * **Title**: Set the widget title. Leave it empty to hide the title section.
 * **Title URL**: Set the title link url. Leave it empty to disable link in the title.
-* **Layout**: Select a widget layout, from layout 1 to 4.
+* **Use category title**: Enable category name as the title.
+* **Use category URL**: Enable category URL as the title URL.
 * **Post type**: Select the post type. Options include: Post, Page, custom post types if available, and any.
 * **Category**: Select a category for the posts, or choose All Categories to disable this filter.
 * **Tag(s)**: Set a post tag (using the tag slug). You can also use comma separated value for multiple tags. Prepending a tag with a hyphen will exclude posts matching that tag. Eg, `featured, -video` will show posts tagged with `featured` but not `video`.
@@ -81,6 +83,23 @@ This plugin has been tested and works with at least PHP 5.3 installed in your en
 11. Block editor
 
 == Changelog ==
+
+= 2.0.0 =
+* Updated compatibility to WordPress 7.0
+* Updated minimum version to WordPress 6.3
+* Updated block to api version 3
+* Updated layout selector
+* Added a new layout
+* Added block title filters (before & after title)
+* Added block wrapper attributes filter
+* Added category title & url option for heading
+* Added category color
+* Fixed disable links in editor
+* Fixed horizontal scrollbar in full width block
+* Fixed missing dependencies
+* Fixed accessibility issues in meta & thumbnail
+* Fixed HTML entity in category dropdown
+* Fixed block rendering issue in editor (Invalid parameter(s): attributes)
 
 = 1.12.0 =
 * Updated compatibility to WordPress 6.9
