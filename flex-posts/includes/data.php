@@ -23,7 +23,7 @@ function flex_posts_get_layouts() {
 	 * @param int $count Default number of layouts.
 	 * @return int Modified number of layouts.
 	 */
-	return apply_filters( 'flex_posts_layouts', 5 );
+	return apply_filters( 'flex_posts_layouts', 6 );
 }
 
 /**

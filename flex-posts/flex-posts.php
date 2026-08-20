@@ -3,7 +3,7 @@
  * Plugin Name: Flex Posts - Responsive Posts Block
  * Plugin URI:  https://tajam.id/flex-posts/
  * Description: Show your posts with thumbnails in flexible, responsive layouts. Works as a sidebar widget or a block in the editor.
- * Version:     2.0.0
+ * Version:     2.1.0
  * Author:      Tajam
  * Author URI:  https://tajam.id/
  * License:     GPL-2.0+
@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Current plugin version.
  */
-define( 'FLEX_POSTS_VERSION', '2.0.0' );
+define( 'FLEX_POSTS_VERSION', '2.1.0' );
 
 /**
  * Plugin directory and url

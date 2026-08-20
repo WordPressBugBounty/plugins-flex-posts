@@ -33,6 +33,12 @@
 	flex: 1 1 25%;
 }
 
+.fp-list-6 .fp-col {
+	min-width: 100px;
+	max-width: 300px;
+	flex: 1 1 20%;
+}
+
 .fp-col:empty {
 	height: 0;
 	visibility: hidden;
@@ -98,7 +104,8 @@
 	height: 85px;
 }
 
-.fp-list-5 .fp-thumbnail img {
+.fp-list-5 .fp-thumbnail img,
+.fp-list-6 .fp-thumbnail img {
 	height: auto;
 }
 
@@ -107,7 +114,8 @@
 	margin-top: 0.8em;
 }
 
-.fp-list-5 .fp-media + .fp-body {
+.fp-list-5 .fp-media + .fp-body,
+.fp-list-6 .fp-media + .fp-body {
 	margin-top: 0.5em;
 }
 

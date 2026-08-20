@@ -3,8 +3,8 @@ Contributors: tajam
 Donate link: https://tajam.id/
 Tags: posts list, posts widget, responsive, magazine, news
 Requires at least: 6.3
-Tested up to: 7.0
-Stable tag: 2.0.0
+Tested up to: 7.1
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,7 +18,7 @@ The widget is responsive so you can place it in any widget area. The widget cont
 
 = Widget Settings =
 
-* **Layout**: Select a widget layout, from layout 1 to 5.
+* **Layout**: Select a widget layout, from layout 1 to 6.
 * **Title**: Set the widget title. Leave it empty to hide the title section.
 * **Title URL**: Set the title link url. Leave it empty to disable link in the title.
 * **Use category title**: Enable category name as the title.
@@ -83,6 +83,10 @@ This plugin has been tested and works with at least PHP 5.3 installed in your en
 11. Block editor
 
 == Changelog ==
+
+= 2.1.0 =
+* Updated compatibility to WordPress 7.1
+* Added a new layout
 
 = 2.0.0 =
 * Updated compatibility to WordPress 7.0
